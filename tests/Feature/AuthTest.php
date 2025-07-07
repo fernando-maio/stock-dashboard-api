@@ -15,8 +15,8 @@ class AuthTest extends TestCase
         $response = $this->postJson('/api/auth/register', [
             'name' => 'Test User',
             'email' => 'test@example.com',
-            'password' => 'Password123',
-            'password_confirmation' => 'Password123',
+            'password' => '#AbCPassword@123',
+            'password_confirmation' => '#AbCPassword@123',
         ]);
 
         $response->assertStatus(201)
@@ -26,12 +26,12 @@ class AuthTest extends TestCase
     public function test_user_can_login_and_get_token()
     {
         $user = User::factory()->create([
-            'password' => bcrypt('Password123'),
+            'password' => bcrypt('#AbCPassword@123'),
         ]);
 
         $response = $this->postJson('/api/auth/login', [
             'email' => $user->email,
-            'password' => 'Password123',
+            'password' => '#AbCPassword@123',
         ]);
 
         $response->assertStatus(200)
@@ -67,7 +67,7 @@ class AuthTest extends TestCase
 
     public function test_user_cannot_login_with_wrong_password()
     {
-        $user = User::factory()->create(['password' => bcrypt('Password123')]);
+        $user = User::factory()->create(['password' => bcrypt('#AbCPassword@123')]);
 
         $response = $this->postJson('/api/auth/login', [
             'email' => $user->email,

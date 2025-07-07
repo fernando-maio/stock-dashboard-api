@@ -35,8 +35,8 @@ class AuthController extends Controller
      *             required={"name", "email", "password", "password_confirmation"},
      *             @OA\Property(property="name", type="string", example="John Doe"),
      *             @OA\Property(property="email", type="string", example="john@example.com"),
-     *             @OA\Property(property="password", type="string", format="password", example="Password123"),
-     *             @OA\Property(property="password_confirmation", type="string", format="password", example="Password123")
+     *             @OA\Property(property="password", type="string", format="password", example="#AbCPassword@123"),
+     *             @OA\Property(property="password_confirmation", type="string", format="password", example="#AbCPassword@123")
      *         )
      *     ),
      *     @OA\Response(response=201, description="User registered with token"),
@@ -63,7 +63,7 @@ class AuthController extends Controller
      *         @OA\JsonContent(
      *             required={"email", "password"},
      *             @OA\Property(property="email", type="string", example="john@example.com"),
-     *             @OA\Property(property="password", type="string", format="password", example="Password123")
+     *             @OA\Property(property="password", type="string", format="password", example="#AbCPassword@123")
      *         )
      *     ),
      *     @OA\Response(response=200, description="Token returned on success"),

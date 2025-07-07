@@ -198,12 +198,12 @@
                                     "password": {
                                         "type": "string",
                                         "format": "password",
-                                        "example": "Password123"
+                                        "example": "#AbCPassword@123"
                                     },
                                     "password_confirmation": {
                                         "type": "string",
                                         "format": "password",
-                                        "example": "Password123"
+                                        "example": "#AbCPassword@123"
                                     }
                                 },
                                 "type": "object"
@@ -245,7 +245,7 @@
                                     "password": {
                                         "type": "string",
                                         "format": "password",
-                                        "example": "Password123"
+                                        "example": "#AbCPassword@123"
                                     }
                                 },
                                 "type": "object"
